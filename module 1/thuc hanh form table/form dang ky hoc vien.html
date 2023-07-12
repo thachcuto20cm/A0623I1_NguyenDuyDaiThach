@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng Ký Học Viên</title>
+</head>
+<body>
+<form >
+    <table style="background: lightyellow">
+        <tr style="background: lightblue"> <td colspan="10"><h2 style="color: blue"> Đăng Ký Học Viên </h2></td></tr>
+        <tr style="margin-left: 100px">
+            <td> <label>Họ Và Tên</label></td>
+            <td> <input type="text" name="name"  size="30"></td>
+        </tr>
+        <tr>
+            <td> <label>Ngày Sinh</label></td>
+            <td> <input type="date" name="dob"> </td>
+        </tr>
+        <tr>
+            <td>Giới Tính</td>
+            <td>
+                <label> <input type="radio" name="sex"> Nam</label>
+                <label> <input type="radio" name="sex"> Nữ</label>
+            </td>
+        </tr>
+        <tr>
+            <td> <label>Địa chỉ</label></td>
+            <td>
+                <textarea row="9" cols="10" name="address"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Lớp</label></td>
+            <td>
+                <select name="class">
+                    <option value="Q">-Chọn lớp-</option>
+                    <option value="A">Lớp A</option>
+                    <option value="B">Lớp B</option>
+                    <option value="C">Lớp C</option>
+                    <option value="D">Lớp D</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Email</label></td>
+            <td><input type="email" name="email" size="10"></td>
+        </tr>
+        <tr>
+            <td><label>Điện thoại</label></td>
+            <td><input type="text" name="number" size="10"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Đăng ký">
+                <input type="reset" value="Nhập lại">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
