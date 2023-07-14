@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onmouseout="mouseout()" onmouseover="mouseover()" onclick="do_something()" id="demo">Click me </button>
+</body>
+</html>
+<script>
+  function do_something(){
+    alert("chap ban nhe ")
+  }
+  function mouseout(){
+    document.getElementById("demo").style.color="black";
+  }
+  function  mouseover(){
+    document.getElementById("demo").style.color="red";
+  }
+</script>
