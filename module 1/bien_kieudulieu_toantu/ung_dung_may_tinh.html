@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+  <input id="A" type="text" name="a">
+  <input id="B" type="text" name="b">
+  </br>
+  </br>
+  <input type="button" onclick="maytinh()" name="addition" value="Addition">
+  <input type="button" onclick="maytinh()" name="subtraction" value="Subtraction">
+  <input type="button" onclick="maytinh()" name="multiplication" value="Multiplication">
+  <input type="button" onclick="maytinh()" name="division" value="Division">
+  </br>
+  </br>
+  <p id="result">Result Division</p>
+  <script>
+
+    function maytinh(){
+      let soA = document.getElementById("A").value;
+      let soB = document.getElementById("B").value;
+      let result;
+      result = soA + soB;
+      result = soA - soB;
+      result = soA * soB;
+      result = soA / soB;
+      document.getElementById("result").innerHTML = result;
+    }
+
+  </script>
+</form>
+</body>
+</html>
