@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+   let doanhSo = parseInt(prompt("Nhâp doanh số: "));
+    let tyLe = 0;
+
+    if (doanhSo <= 0) {
+        console.log("Doanh số không hợp lệ");
+    } else if (doanhSo < 50000000) {
+        tyLe = 5;
+    } else if (doanhSo < 100000000) {
+        tyLe = 7;
+    } else if (doanhSo < 200000000) {
+        tyLe = 10;
+    } else {
+        tyLe = 12;
+    }
+    let hoaHong = doanhSo * tyLe / 100;
+    document.write("Hoa hồng: " + hoaHong + " VND")
+</script>
+</body>
+</html>

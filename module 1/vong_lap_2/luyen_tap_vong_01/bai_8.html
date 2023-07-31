@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="choi" onclick="startGame()" value="Chơi">
+<script>
+  let gioi_han_doan;
+  let so_ngau_nhien;
+  let so_lan_doan = 0;
+  const doan_toi_da = 3;
+
+  document.getElementById("playButton").addEventListener("click", startGame);
+
+  function startGame() {
+      gioi_han_doan = parseInt(prompt("Bạn muốn đoán số trong khoảng nào?"));
+      so_ngau_nhien = Math.floor(Math.random() * gioi_han_doan) + 1;
+      so_lan_doan = 0;
+
+    while (so_lan_doan < doan_toi_da) {
+      let doan = parseInt(prompt("Lượt đoán thứ " + (so_lan_doan + 1) + ". Đoán số trong khoảng từ 1 đến " + gioi_han_doan + "."));
+
+      if (doan === so_ngau_nhien) {
+        alert("Chúc mừng! Bạn đã đoán đúng số trong " + (so_lan_doan + 1) + " lượt đoán.");
+        // return;
+      } else if (doan > so_ngau_nhien) {
+        alert("Số bạn đoán lớn hơn số đúng. Bạn còn " + (doan_toi_da - so_lan_doan - 1) + " lượt đoán.");
+      } else {
+        alert("Số bạn đoán bé hơn số đúng. Bạn còn " + (doan_toi_da - so_lan_doan - 1) + " lượt đoán.");
+      }
+
+      so_lan_doan++;
+    }
+
+    alert("Bạn đã hết lượt đoán. Số đúng là " + so_ngau_nhien + ".");
+  }
+</script>
+</body>
+</html>

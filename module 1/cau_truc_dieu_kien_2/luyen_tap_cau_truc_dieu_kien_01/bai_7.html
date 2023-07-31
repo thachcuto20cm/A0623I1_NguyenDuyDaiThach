@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+ let soPhutGoi = parseInt(prompt("Nhập số phút gọi: ")); // số phút đã gọi
+ let soTinNhan = parseInt(prompt("Nhập số tin nhắn đã gửi: "));// số tin nhắn đã gửi
+ let soGB = parseInt(prompt("Nhập số GB đã dùng: ")); // số GB đã sử dụng
+ let cuocCoBan = 25000; // cước cơ bản
+ let cuocGoi = 500; // cước phút gọi vượt quá số phút miễn phí
+ let cuocTinNhan = 200; // cước tin nhắn vượt quá số tin nhắn miễn phí
+ let cuocGB = 50000; // cước mỗi GB vượt quá số GB miễn phí
+ let soPhutMienPhi = 200; // số phút miễn phí
+ let soTinNhanMienPhi = 50; // số tin nhắn miễn phí
+ let soGBMienPhi = 3; // số GB miễn phí
+
+ let tongCuoc = cuocCoBan;
+ let cuocGoiVuot = 0;
+ let cuocTinNhanVuot = 0;
+ let cuocGBVuot = 0;
+
+  // tính cước phút gọi
+  if (soPhutGoi > soPhutMienPhi) {
+    cuocGoiVuot = (soPhutGoi - soPhutMienPhi) * cuocGoi;
+    tongCuoc += cuocGoiVuot;
+  }
+
+  // tính cước tin nhắn
+  if (soTinNhan > soTinNhanMienPhi) {
+    cuocTinNhanVuot = (soTinNhan - soTinNhanMienPhi) * cuocTinNhan;
+    tongCuoc += cuocTinNhanVuot;
+  }
+
+  // tính cước sử dụng dữ liệu di động
+  if (soGB > soGBMienPhi) {
+    cuocGBVuot = (soGB - soGBMienPhi) * cuocGB;
+    tongCuoc += cuocGBVuot;
+  }
+
+  // hiển thị kết quả
+  document.writeln("Tổng cước là: " + tongCuoc + " đồng"+ '<br/>');
+  document.writeln("Cước phút gọi vượt quá số phút miễn phí: " + cuocGoiVuot + " đồng" + '<br/>');
+  document.writeln("Cước tin nhắn vượt quá số tin nhắn miễn phí: " + cuocTinNhanVuot + " đồng"+ '<br/>');
+  document.writeln("Cước sử dụng dữ liệu vượt quá số GB miễn phí: " + cuocGBVuot + " đồng");
+</script>
+</body>
+</html>

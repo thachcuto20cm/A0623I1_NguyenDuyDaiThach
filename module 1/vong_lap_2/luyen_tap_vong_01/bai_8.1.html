@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="play" value="Chơi" name="choi" onclick="playgame()">
+<script>
+  let gioi_han_doan;
+  let so_ngau_nhien;
+  let so_lan_doan = 0;
+  const doan_toi_da = 3;
+
+  document.getElementById("play").addEventListener("click", playgame)
+
+  function playgame(){
+      gioi_han_doan = parseInt(prompt("Bạn muốn đoán số trong khoảng nào: "))
+      so_ngau_nhien = Math.floor(Math.random() * gioi_han_doan) +1 ;
+      so_lan_doan = 0;
+
+      for (so_lan_doan = 0; so_lan_doan < doan_toi_da; so_lan_doan++){
+          let doan = parseInt(prompt("bạn đoán từ khoảng 1 đến " + gioi_han_doan))
+      }
+  }
+</script>
+</body>
+</html>

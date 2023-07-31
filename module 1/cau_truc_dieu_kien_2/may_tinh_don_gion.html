@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+  <table>
+    <tr>
+      <td colspan="4"><input id="A" type="text" name="ketqua"></td>
+    </tr>
+    <tr>
+      <td><input type="button" onclick="nhap(this.value)" value="1"></td>
+      <td><input type="button" onclick="nhap(this.value)" value="2"></td>
+      <td><input type="button" onclick="nhap(this.value)" value="3"></td>
+      <td><input type="button" onclick="nhap(this.value)" value="+"></td>
+    </tr>
+    <tr>
+      <td><input type="button" onclick="nhap(this.value)" value="4"></td>
+      <td><input type="button" onclick="nhap(this.value)" value="5"></td>
+      <td><input type="button" onclick="nhap(this.value)" value="6"></td>
+      <td><input type="button" onclick="nhap(this.value)" value="-"></td>
+    </tr>
+    <tr>
+      <td><input type="button" onclick="nhap(this.value)" value="7"></td>
+      <td><input type="button" onclick="nhap(this.value)" value="8"></td>
+      <td><input type="button" onclick="nhap(this.value)" value="9"></td>
+      <td><input type="button" onclick="nhap(this.value)" value="*"></td>
+    </tr>
+    <tr>
+      <td><input type="button" onclick="xoa()" value="C"></td>
+      <td><input type="button" onclick="nhap(this.value)" value="0"></td>
+      <td><input type="button" onclick="tinh()" value="="></td>
+      <td><input type="button" onclick="nhap(this.value)" value="/"></td>
+    </tr>
+  </table>
+  <script>
+    function nhap(so){
+      document.getElementById("A").value +=so;
+    }
+    function tinh(){
+      let string = document.getElementById("A").value;
+      document.getElementById("A").value = eval(string);
+    }
+    function xoa() {
+      document.getElementById("A").value="";
+    }
+  </script>
+</form>
+</body>
+</html>
