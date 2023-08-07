@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <p>Dịch tiếng Anh</p>
+    <input type="text" id="text"/>
+    <input type="button" id="btnDich" value="Dịch" onclick="dich();"/>
+    <div id="result"></div>
+</form>
+<script>
+    function dich(){
+        let TA = ["dog","cat","cow","book","school"];
+        let TV = ["chó","mèo","bò","sách","trường học"];
+        let search = document.getElementById("text").value;
+        let index = 0;
+
+        for ( let i = 0; i < TA.length; i++){
+            if (search === TA[i]){
+                index = i;
+            }
+        }
+        alert(TV[index])
+    }
+</script>
+</body>
+</html>

@@ -5,6 +5,19 @@
     <title>Title</title>
 </head>
 <body>
+<script>
+    function* fibonacci() {
+        let [a, b] = [0, 1];
 
+        while (true) {
+            yield a;
+            [a, b] = [b, a + b];
+        }
+    }
+
+    let fib = fibonacci();
+
+    document.write(Array.from({ length: 10 }, () => fib.next().value)); // [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+</script>
 </body>
 </html>

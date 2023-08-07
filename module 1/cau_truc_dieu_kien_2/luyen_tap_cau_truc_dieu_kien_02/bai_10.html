@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let tiendien = parseInt(prompt("Vui lòng nhập: "));
+  let total;
+  let sotien;
+
+  if (tiendien <= 50){
+      sotien = 1.678;
+  } else if (51 <= tiendien <= 100){
+      sotien = 1.734;
+  } else if (101 <= tiendien <= 200){
+      sotien = 2.014;
+  } else if (201 <= tiendien <= 300){
+      sotien = 2.536;
+  } else if (301 <= tiendien <= 400 ){
+      sotien = 2.834;
+  } else {
+      sotien = 2.927;
+  }
+  total = tiendien * sotien;
+
+  document.write("Số tiền điện là: " + total + " VND")
+</script>
+</body>
+</html>

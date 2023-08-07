@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <script>
+   let thunhap = parseInt(prompt("Vui lòng nhập thu nhập cá nhân: "));
+   let thue
+
+     if (thunhap <= 0){
+       thue = 0;
+     }else if (thunhap <= 5000000){
+       thue = thunhap *0.05
+     } else if ( thunhap <= 10000000){
+       thue = thunhap *0.1;
+     } else if (thunhap <= 18000000){
+       thue = thunhap *0.15;
+     } else if (thunhap <= 32000000){
+       thue = thunhap * 0.2;
+     } else if ( thunhap <= 52000000){
+       thue = thunhap *0.25;
+     } else if (thunhap <= 80000000){
+       thue = thunhap *0.3;
+     } else {
+       thue = thunhap *0.35;
+     }
+  alert("số tiền thuế của bạn là: " + thue)
+ </script>
+</body>
+</html>
