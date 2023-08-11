@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let sotienbandau = parseInt(prompt("Nhập số tiền ban đầu: "));
+  let sothangchovay = parseInt(prompt("Nhập số tháng cho vay: "));
+  let laisuathangthang = 0.5;
+  let lai = 0;
+
+  for (i = 0; i<= sothangchovay; i++ ){
+    lai = sotienbandau * laisuathangthang * sothangchovay;
+
+  }
+  document.write("Lãi là: "+ lai + " VND");
+</script>
+</body>
+</html>

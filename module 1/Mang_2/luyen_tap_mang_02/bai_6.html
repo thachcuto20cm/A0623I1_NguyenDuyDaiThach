@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = prompt("Nhập: ")
+    let str = []
+        for (let i = 0; i < array.length; i++) {
+            if (array.charAt(i) === "-") {
+                str.push("_")
+            } else {
+                str.push(array[i]);
+            }
+    }
+        document.write(str.join(""))
+</script>
+</body>
+</html>
