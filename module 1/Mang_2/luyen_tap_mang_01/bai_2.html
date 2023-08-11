@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = [23,2,4,2,4,3,1,22,32,54];
+  let max  = a[0];
+   let count = 0;
+
+  for (let i = 0; i<= a.length; i++){
+    if (a[i] > max){
+      max = a[i];
+      count = i;
+    }
+  }
+  document.write("Phần tử lớn nhất là: " + max);
+  document.write(" Vị trí của phần tử lớn nhất là: " + count)
+</script>
+</body>
+</html>

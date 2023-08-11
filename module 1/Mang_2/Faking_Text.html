@@ -5,14 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-<center>
   <h2>Type anthing slowly</h2>
-  <form name="f">
+  <form name="form">
     <textarea name="txt" cols="40" rows="10" onkeydown="typeTextarea();"></textarea>
   </form>
-</center>
 <script>
-  let a = Array();
+  let arr = Array();
   let n = "";
 
   arr[1] = 'T';
@@ -39,18 +37,18 @@
   arr[22] = '!';
 
   function typeTextarea(){
-     t = document.f.txt.value;
-     j = i.length;
+    var t = document.form.txt.value;
+    var j = t.length;
     if (j > 0) {
       for (let i = 1; i <= j; i++) {
-        n = n+ a[i];
-        if (i === 22) {
-          document.f.txt.value = "";
+        n += arr[i];
+        if (i > 22) {
+          document.form.txt.value = "";
           n = "";
         }
       }
     }
-    document.f.txt.value = n;
+    document.form.txt.value = n;
     n = "";
     setTimeout("typeTextarea()", 1);
     // return false;

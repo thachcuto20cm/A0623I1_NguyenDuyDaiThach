@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  function feetToMeter(foot){
+    return 0.305* foot
+  }
+  function meterToFeet(meter){
+   return  3.279 *meter
+  }
+
+  let foot = parseInt(prompt("Enter a feet: "));
+  let meter = parseInt(prompt("Enter a meter: "));
+
+  let f = meterToFeet(meter)
+  let m = feetToMeter(foot);
+  document.write("Feet đổi ra meter là: "+m+"<br/>")
+  document.write("Meter đổi ra feet là: "+f)
+
+
+
+
+
+</script>
+</body>
+</html>
