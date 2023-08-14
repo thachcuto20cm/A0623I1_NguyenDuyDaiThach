@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function dientich(bankinhdt){
+    return 3.14159 * bankinhdt^2;
+  }
+  function chuvi(bankinhcv){
+    return 2 * 1.14159 *bankinhcv;
+  }
+
+  let bankinhdt = parseInt(prompt("Vui lòng nhập bán kính hình tròn: "));
+  let bankinhcv = parseInt(prompt("Vui lòng nhập ban kính hình tròn: "));
+
+  let Rdt = dientich(bankinhdt);
+  let Rcv = chuvi(bankinhcv);
+
+  document.write("Diện tích hình tròn là: "+ Rdt+"<br/>");
+  document.write("Chu vi hình tròn là: "+ Rcv);
+</script>
+</body>
+</html>

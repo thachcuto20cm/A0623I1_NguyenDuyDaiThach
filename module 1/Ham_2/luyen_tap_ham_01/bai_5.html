@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let sao = ["Polaris","Aldebaran","Deneb","Vega"," Altair","Dubhe","Regulus"];
+  let sao1 = ["Ursa Minor","Tarurus","Cygnus","Lyra","Aquila","Ursa Major","Leo"]
+
+  function timngoisao(tensao){
+    for (let i = 0; i< sao.length; i++){
+      if (sao[i] === tensao){
+        return sao1[i] //trả về giá trị sao1
+      }
+    }
+    return "Không tìm thấy ngôi sao nào "
+  }
+  let tensao = prompt("Vui long nhập tên ngôi sao: ");
+   let sao2 = timngoisao(tensao);
+   alert(sao2)
+
+
+
+</script>
+</body>
+</html>

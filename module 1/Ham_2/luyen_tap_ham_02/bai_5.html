@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function giatrinhonhat(a,b,c){
+    let sonhonhat = a;
+    if (b < sonhonhat){
+      sonhonhat = b
+    }
+    if (c < sonhonhat){
+      sonhonhat = c;
+    }
+    return sonhonhat;
+  }
+  let a = parseInt(prompt("Enter a: "));
+  let b = parseInt(prompt("Enter b: "));
+  let c = parseInt(prompt("Enter c: "));
+
+  let result = giatrinhonhat(a,b,c)
+  document.write("giá trị nhỏ nhất là: "+ result)
+</script>
+</body>
+</html>

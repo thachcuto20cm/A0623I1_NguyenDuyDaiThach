@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function tinhGiaiThua(n) {
+    if (n === 0 || n === 1) {
+      return 1;
+    } else {
+      let giaiThua = 1;
+      for (let i = 2; i <= n; i++) {
+        giaiThua *= i;
+      }
+      return giaiThua;
+    }
+  }
+
+  // Ví dụ sử dụng hàm
+  let soNguyenDuong = parseInt(prompt("Vui lòng nhập: "))
+  let giaiThua = tinhGiaiThua(soNguyenDuong);
+ document.write("Giai thừa của " + soNguyenDuong + " là: " + giaiThua);
+</script>
+</body>
+</html>
