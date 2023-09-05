@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function chuanHoaXau(xau) {
+
+        let tuArray = xau.split(" ");
+
+        for (let i = 0; i < tuArray.length; i++) {
+            if (tuArray[i] !== "") {
+                tuArray[i] = tuArray[i].toLowerCase();
+                tuArray[i] = tuArray[i][0].toUpperCase() + tuArray[i].slice(1);
+            }
+        }
+        return tuArray.join(" ");
+    }
+
+    let xau = "tRuong TaN HAI";
+    let xauDaChuanHoa = chuanHoaXau(xau);
+    alert(xauDaChuanHoa);
+
+</script>
+</body>
+</html>

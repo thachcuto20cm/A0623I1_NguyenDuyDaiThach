@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="nokia power" onclick="NokiaPower()">
+<input type="button" value="nokia charge" onclick="nokiaCharge()">
+<input type="button" value="nokia create message" onclick="nokiaCreateMessage()">
+<input type="button" value="nokia get message" onclick="nokiaGetText()">
+<input type="button" value="nokia see outbox" onclick="nokiaSeeOutbox()">
+<input type="button" value="nokia see inbox" onclick="nokiaSeeInbox()">
+<br><br><br><br>
+<input type="button" value="iPhone power" onclick="IPhonePower()">
+<input type="button" value="iPhone charge" onclick="iPhoneCharge()">
+<input type="button" value="iPhone create message" onclick="iPhoneCreateMessage()">
+<input type="button" value="iPhone get message" onclick="iPhoneGetText()">
+<input type="button" value="iPhone see outbox" onclick="iPhoneSeeOutbox()">
+<input type="button" value="iPhone see inbox" onclick="iPhoneSeeInbox()">
+<script>
+    class Mobile {
+        constructor(name,friendName,fromName) {
+            this.name = name;
+            this.powerStatus = false;
+            this.battery = 0;
+            this.draftedMessage = [];
+            this.incomingText = [];
+            this.friendName = friendName;
+            this.fromName = fromName;
+        }
+
+        power() {
+            this.powerStatus = !this.powerStatus;
+            if (this.powerStatus) {
+                alert(`The phone is powered on.`);
+            } else {
+                alert(`The phone is powered off.`);
+            }
+        }
+
+        checkCharge() {
+            if (this.battery <= 0) {
+                return false;
+            }
+            return true;
+        }
+
+        charge() {
+            if (this.battery >= 100) {
+                alert("Pin đã đầy.");
+            } else {
+                this.battery += 20;
+                alert(this.battery+"%");
+            }
+        }
+
+        createText() {
+            if (!this.checkCharge()) {
+                alert("Not enough battery to use.");
+                return;
+            }
+            if (!this.powerStatus) {
+                alert("Your phone is powered off.");
+                return;
+            }
+
+            let text = prompt("Enter your message:");
+            let friendName = prompt("Enter the name of the recipient:");
+            this.draftedMessage.push({ name: friendName, value: text });
+            this.battery -= 5;
+        }
+
+        getText() {
+            if (!this.checkCharge()) {
+                alert("Not enough battery to use.");
+                return;
+            }
+            if (!this.powerStatus) {
+                alert("Your phone is powered off.");
+                return;
+            }
+
+            if (this.name === this.friendName) {
+                alert("Được gửi từ: " + fromName + "|" +" Nội dung: " + text);
+                this.incomingText.push({  value: text });
+            }
+            this.battery -= 5;
+        }
+
+        seeInbox() {
+            if (!this.checkCharge()) {
+                alert("Not enough battery to use.");
+                return;
+            }
+            if (!this.powerStatus) {
+                alert("Your phone is powered off.");
+                return;
+            }
+
+            for (let i in this.incomingText) {
+                alert("Received from:" +this.incomingText[i].name +"|" +"Content: " +this.incomingText[i].value);
+            }
+            this.battery -= 5;
+        }
+
+        seeOutbox() {
+            if (!this.checkCharge()) {
+                alert("Not enough battery to use.");
+                return;
+            }
+            if (!this.powerStatus) {
+                alert("Your phone is powered off.");
+                return;
+            }
+
+            for (let i in this.draftedMessage) {
+                alert("Gửi đến: " + this.draftedMessage[i].name + "|" + " Nội dung: " + this.draftedMessage[i].value);
+            }
+            this.battery -= 5;
+        }
+    }
+
+    let nokia = new Mobile('Nokia');
+    let iPhone = new Mobile('iPhone');
+
+    function NokiaPower() {
+        nokia.power();
+    }
+
+    function nokiaCharge() {
+        nokia.charge();
+    }
+
+    function nokiaCreateMessage() {
+        nokia.createText();
+    }
+
+    function nokiaGetText() {
+        nokia.getText();
+    }
+
+    function nokiaSeeOutbox() {
+        nokia.seeOutbox();
+    }
+
+    function nokiaSeeInbox() {
+        nokia.seeInbox();
+    }
+
+    function IPhonePower() {
+        iPhone.power();
+    }
+
+    function iPhoneCharge() {
+        iPhone.charge();
+    }
+
+    function iPhoneCreateMessage() {
+        iPhone.createText();
+    }
+
+    function iPhoneGetText() {
+        iPhone.getText();
+    }
+
+    function iPhoneSeeOutbox() {
+        iPhone.seeOutbox();
+    }
+
+    function iPhoneSeeInbox() {
+        iPhone.seeInbox();
+    }
+</script>
+</body>
+</html>

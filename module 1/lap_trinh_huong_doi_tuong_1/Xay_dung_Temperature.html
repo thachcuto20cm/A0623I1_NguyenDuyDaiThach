@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let Temperature = function (Celsius,Fahrenheit,Kenvin){
+    this.Celsius = Celsius;
+
+    this.CsangF = function (){
+      return (Celsius * 9/5) +32;
+    }
+    this.CsangK = function (){
+      return Celsius + 273.15;
+    }
+  }
+
+    let temperature = new Temperature(25)
+    let Fahrenheit = temperature.CsangF();
+    let Kenvin = temperature.CsangK();
+    document.write("Độ F: "+Fahrenheit+";"+" Độ K: "+Kenvin )
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function missingValue(a,b){
+    const setA = new Set(a);
+    const setB = new Set(b);
+
+    const sortedArrayA = [...setA].sort((a, b) => a - b);
+    const sortedArrayB = [...setB].sort((a, b) => a - b);
+
+    const result = sortedArrayB.filter((element) => !sortedArrayA.includes(element));
+
+    return result;
+  }
+  const A = [7, 2, 5, 3, 5, 3];
+  const B = [7, 2, 5, 4, 6, 3, 5, 3];
+
+  const missingValues = missingValue(A, B);
+  alert("Phần tử bị thiếu là: "+missingValues);
+</script>
+</body>
+</html>

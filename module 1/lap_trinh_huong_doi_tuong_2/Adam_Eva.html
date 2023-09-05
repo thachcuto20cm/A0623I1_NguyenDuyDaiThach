@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor(weight) {
+
+            this.weight = 10;
+            this.getWeight= function () {
+                return this.weight;
+
+            }
+            this.decrease = function (){
+
+            }
+        }
+
+    }
+    class Human {
+        constructor(name,gender,weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+            this.eat = function (apple){
+                if (apple.weight >0){
+                    this.weight += 1;
+                    apple.weight -= 1;
+                }
+            }
+            this.checkWeight= function (){
+                alert(" Tên: " + this.name+ " Giới tính: " + this.gender+ " Cân nặng: "+this.weight);
+
+            }
+
+            }
+
+
+
+    }
+    let apple = new Apple();
+    let adam = new Human("adam","nam",50);
+    let eva = new Human("eva", "nữ",35);
+    for (let i =0; i<5;i++){
+        adam.eat(apple);
+        eva.eat(apple);
+        adam.checkWeight();
+        eva.checkWeight();
+        alert("Khối lượng apple: " +apple.weight)
+    }
+
+
+
+</script>
+</body>
+</html>

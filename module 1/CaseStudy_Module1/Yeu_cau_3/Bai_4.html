@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  let Menu = {
+    1: { name: "Cafe", price: 10000 },
+    2: { name: "Cam vắt", price: 15000 },
+    3: { name: "Nước ép cà rốt", price: 12000 },
+    4: { name: "Nước ép cà chua", price: 13000 },
+    5: { name: "Nước lọc", price: 5000 },
+    6: { name: "Nước dừa", price: 20000 }
+  };
+
+
+  function hienthidanhsach() {
+    document.write("Menu: "+"<br/>");
+    for (let key in Menu) {
+      document.write(key + ". " + Menu[key].name+"<br/>");
+    }
+    document.write("7. Thoát gọi món "+ "<br/>");
+  }
+
+
+  function tinhtien(order) {
+    let total = 0;
+    for (let key in order) {
+      let drink = Menu[key];
+      let quantity = order[key];
+      total += drink.price * quantity;
+    }
+    return total;
+  }
+
+
+  function goinuoc() {
+    let order = {};
+    let choice = 0;
+
+    hienthidanhsach();
+
+    while (choice !== 7) {
+      choice = parseInt(prompt("Vui lòng chọn một thức uống (1-7): "));
+
+      if (choice >= 1 && choice <= 6) {
+        let quantity = parseInt(prompt("Nhập số lượng: "));
+        order[choice] = quantity;
+      }
+    }
+
+    let totalPrice = tinhtien(order);
+    document.write("Tổng số tiền cần trả: " + totalPrice + "đ");
+  }
+
+
+  goinuoc();
+</script>
+</body>
+</html>

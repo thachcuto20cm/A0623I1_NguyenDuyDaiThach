@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function tinhluongrong(luong) {
+    let thuesuat;
+
+    if (luong >= 15000000) {
+      thuesuat = 0.2;
+    } else if (luong >= 7000000) {
+      thuesuat = 0.1;
+    } else {
+      thuesuat = 0.05;
+    }
+
+    const thue = luong * thuesuat;
+    const luongrong = luong - thue;
+
+    return {
+      thue: thue,
+      luongrong: luongrong
+    };
+  }
+
+  const luong = parseFloat(prompt("Nhập lương nhân viên:"));
+  const result = tinhluongrong(luong);
+
+  alert("Thuế thu nhập: " + result.thue);
+  alert("Lương ròng: " + result.luongrong);
+</script>
+</body>
+</html>

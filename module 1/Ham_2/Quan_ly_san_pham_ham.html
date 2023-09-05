@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý Sản phẩm</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>Quản lý Sản phẩm</h1>
+
+<form id="addProductForm">
+    <input type="text" id="productName" placeholder="Tên sản phẩm">
+    <button type="submit">Thêm</button>
+</form>
+
+<table id="productTable">
+    <thead>
+    <tr>
+        <th>Số thứ tự</th>
+        <th>Tên sản phẩm</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody id="productTableBody">
+    </tbody>
+</table>
+
+<script>
+    // Bước 2: Tạo một mảng chứa danh sách sản phẩm
+    let productList = [];
+
+    // Bước 3: Xây dựng các hàm
+    function displayProductList() {
+        let tableBody = document.getElementById("productTableBody");
+        tableBody.innerHTML = "";
+
+        for (let i = 0; i < productList.length; i++) {
+            let product = productList[i];
+
+            let row = document.createElement("tr");
+
+            let indexCell = document.createElement("td");
+            indexCell.textContent = i + 1;
+            row.appendChild(indexCell);
+
+            let nameCell = document.createElement("td");
+            nameCell.textContent = product;
+            row.appendChild(nameCell);
+
+            let deleteCell = document.createElement("td");
+            let deleteButton = document.createElement("button");
+            deleteButton.textContent = "Xoá";
+            deleteButton.addEventListener("click", function() {
+                deleteProduct(i);
+            });
+            deleteCell.appendChild(deleteButton);
+            row.appendChild(deleteCell);
+
+            tableBody.appendChild(row);
+        }
+    }
+
+    function addProduct(event) {
+        event.preventDefault();
+
+        let productNameInput = document.getElementById("productName");
+        let productName = productNameInput.value;
+
+        if (productName.trim() !== "") {
+            productList.push(productName);
+            productNameInput.value = "";
+            displayProductList();
+            alert("Đã thêm sản phẩm thành công!");
+        } else {
+            alert("Vui lòng nhập tên sản phẩm!");
+        }
+    }
+
+    function editProduct(index) {
+        let newName = prompt("Nhập tên mới cho sản phẩm:", productList[index]);
+
+        if (newName !== null && newName.trim() !== "") {
+            productList[index] = newName;
+            displayProductList();
+            alert("Đã sửa tên sản phẩm thành công!");
+        }
+    }
+
+    function deleteProduct(index) {
+        productList.splice(index, 1);
+        displayProductList();
+        alert("Đã xoá sản phẩm thành công!");
+    }
+
+    // Bước 4: Gọi hàm hiển thị danh sách sản phẩm
+    displayProductList();
+
+    // Bước 5: Gọi hàm thêm một sản phẩm vào danh sách
+    let addProductForm = document.getElementById("addProductForm");
+    addProductForm.addEventListener("submit", addProduct);
+
+    // Bước 6: Gọi hàm sửa một sản phẩm trong danh sách
+    let productTableBody = document.getElementById("productTableBody");
+    productTableBody.addEventListener("click", function(event) {
+        if (event.target.tagName === "TD") {
+            let rowIndex = event.target.parentNode.rowIndex - 1;
+            editProduct(rowIndex);
+        }
+    });
+</script>
+</body>
+</html>

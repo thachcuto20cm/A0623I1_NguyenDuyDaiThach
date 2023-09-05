@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function drawHollowRightTriangle(height) {
+        for (let i = 1; i <= height; i++) {
+            let row = '';
+
+            for (let j = 1; j <= height; j++) {
+                if (j === 1 || j === i || i === height) {
+                    row += "*";
+                } else {
+                    row += "&nbsp;&nbsp;";
+                }
+            }
+            document.write(row + "<br/>");
+        }
+    }
+
+    const height = parseInt(prompt("Nhập chiều cao tam giác vuông cân:"));
+    drawHollowRightTriangle(height);
+
+</script>
+</body>
+</html>

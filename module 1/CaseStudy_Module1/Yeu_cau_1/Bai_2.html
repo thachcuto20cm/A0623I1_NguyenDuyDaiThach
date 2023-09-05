@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function kiemtratuvung(vocabulary){
+      const voca = ['O','U','I','A','E']
+      const lowercaseChar = vocabulary.toLowerCase();
+      if (voca.includes(lowercaseChar)){
+          return "Nguyên Âm"
+      } else {
+          return "Phụ Âm"
+      }
+  }
+  let character = prompt("Enter a word: ")
+  let result = kiemtratuvung(character);
+
+  console.log(result)
+</script>
+</body>
+</html>
